@@ -6,21 +6,23 @@ namespace QuadraticEquation
     {
         public static void Main()
         {
-            QuadraticEquation qe = new QuadraticEquation();
-            int a, b, c;
-            double delta, x1, x2;
-            Console.Write("\n");
+            double x1 = 0.0;
+            double x2 = 0.0;
             Console.Write("Giai phuong trinh bac hai trong C#: \n");
             Console.Write("---------------------------------------------------");
-
+            
             Console.Write("Nhap gia tri cua a: ");
-            a = Convert.ToInt32(Console.ReadLine());
+            double a = Convert.ToDouble(Console.ReadLine());
             Console.Write("\nNhap gia tri cua b: ");
-            b = Convert.ToInt32(Console.ReadLine());
+            double b = Convert.ToDouble(Console.ReadLine());
             Console.Write("\nNhap gia tri cua c: ");
-            c = Convert.ToInt32(Console.ReadLine());
+            double c = Convert.ToDouble(Console.ReadLine());
 
-            delta = b * b - 4 * a * c;
+            QuadraticEquation qe = new QuadraticEquation(a, b, c);
+            double delta = qe.GetDiscriminant(a, b, c);
+            a = qe.GetA();
+            b = qe.GetB();
+            c = qe.GetC();
             if (delta == 0)
             {
                 x1 = -b / (2.0 * a);

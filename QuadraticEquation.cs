@@ -8,7 +8,14 @@ namespace QuadraticEquation
         private double b;
         private double c;
 
+        public QuadraticEquation() { }
 
+        public QuadraticEquation(double a, double b, double c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
         public void SetA(double a)
         {
             this.a = a;
